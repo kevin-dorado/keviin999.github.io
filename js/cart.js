@@ -408,6 +408,6 @@ const eliminarArt = (id) => {
         return aId !== foundId
 
     })
-    localStorage.setItem("prodcarrito",JSON.stringify(a|) )
+    localStorage.setItem("prodcarrito",JSON.stringify(a) )
     showCart(a)
 }
