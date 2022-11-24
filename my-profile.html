@@ -26,7 +26,7 @@
   </style>
 </head>
 
-<body>
+<body class="bg-body">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="inicio.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -45,6 +45,7 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <div id="nombreusu"></div>
           </li>
         </ul>
       </div>
@@ -52,9 +53,83 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <h3 class="mx-auto pt-4" style="width: 200px;"> Tu perfil </h3>
+      <div class="row  " >
+        <!-- Perfil -->
+        <div class=" col-md-5" style="background-color:#f1f1f1;">
+          <div class="pt-4  text-center">
+            <img src="img/img_perfil.png" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" id="imgperfil"> 
+
+            <div class="row">
+              <h2 id="seename" class="pt-1">Nombre</h2>
+              <h2 id="seesurname">Apellido</h2>
+            </div>
+            
+          </div>    
+        </div>
+
+        <div class=" p-2 text-dark  col-md-7 border-start border-dark" style="background-color:#f1f1f1;">
+          <form class="row  needs-validation m-3" id="formperfil" novalidate >
+            <!-- Nombres -->
+              <div class="col-md-6 ">
+                <label for="" class="form-label form-control-lg px-0"> Primer Nombre</label>
+                <input type="text"  class="form-control form-control-md" id="nombre1" placeholder="Obligatorio" required>
+                <div class="invalid-feedback">
+                  Por favor introduzca su nombre
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="" class="form-label form-control-lg  px-0"> Segundo Nombre</label>
+                <input type="text"  class="form-control form-control-md" id="nombre2" placeholder="Opcional">
+                <div class="invalid-feedback">
+                  Por favor introduzca su segundo nombre
+                </div>
+              </div>
+              <!-- Apellidos -->
+              <div class="col-md-6 pt-3">
+                <label for="" class="form-label form-control-lg px-0"> Primer Apellido</label>
+                <input type="text"  class="form-control form-control-md" id="apellido1" placeholder="Obligatorio" required>
+                <div class="invalid-feedback">
+                  Por favor introduzca su apellido
+                </div>
+              </div>
+              <div class="col-md-6 pt-3">
+                <label for="" class="form-label form-control-lg px-0"> Segundo Apellido</label>
+                <input type="text"  class="form-control form-control-md" id="apellido2" placeholder="Opcional" >
+              </div>
+              <!-- Email -->
+              <div class="col-md-6 pt-3">
+                <label for="" class="form-label form-control-lg px-0"> Correo electronico</label>
+                <input type="email" id="correo"  class="form-control form-control-md"  placeholder="Ej:Juan2812@gmail.com" disabled>
+              </div>
+              <!-- Foto -->
+              <div class="col-md-6 pt-3">
+                <label for="" class="form-label form-control-lg px-0">Selecciona tu foto </label>
+                <input type="file"  class="form-control form-control-md" id="fotoperfil" placeholder="Opcional">
+                <div class="invalid-feedback">
+                  Por favor introduzca una foto
+                </div>
+              </div>
+              <!-- Numero-->
+              <div class="col-md-6 pt-3">
+                <label for="" class="form-label form-control-lg px-0">Teléfono de contacto </label>
+                <input type="tel"  class="form-control form-control-md" id="telefono" placeholder="Opcional">
+                <div class="invalid-feedback">
+                  Por favor introduzca un telefono
+                </div>
+              </div>
+
+              <div class=" col-md-6 align-self-end text-end  ">
+              
+                  <button type="submit"  id="perfilsend" class="btn btn-success mx-auto form-control ">Guardar</button>
+              </div>
+
+          </form>
+        </div>  
       </div>
+
+
+
     </div>
   </main>
   <footer class="text-muted">

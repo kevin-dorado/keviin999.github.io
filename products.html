@@ -22,7 +22,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="inicio.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -31,6 +31,7 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <div id="nombreusu"></div>
           </li>
         </ul>
       </div>
@@ -38,11 +39,60 @@
   </nav>
   <main class="pb-5 container">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <h2 class="text-center p-3">Productos</h2>
+      <p class="text-center lead">Veras aqui todos los productos de la categoria <b>Autos</b></p>
+      <div class="container">
+        <div class="row">
+          <div class="col text-end">
+            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+              <input type="radio" class="btn-check" name="options" id="sortAsc">
+              <label class="btn btn-light" for="sortAsc"><i class="fas fa-sort-amount-up mr-1"></i> $</label>
+              <input type="radio" class="btn-check" name="options" id="sortDesc">
+              <label class="btn btn-light" for="sortDesc"><i class="fas fa-sort-amount-down mr-1"></i> $</label>
+              <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
+              <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i> Rel.</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 px-0 ">
+            <input class="form-control border-success" id="buscador" type="search" placeholder="Buscador" aria-label="Search">
+          </div>
+          <div class="col-lg-6  col-md-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col-2 ">
+                <p class="font-weight-normal text-end my-2">Cant.</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              </div>
+              <div class="col p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="list-group" id="cat-list-container">
+          </div>
+        </div>
       </div>
+        <div class="row"> 
+              <div id="a1" class="list-group"></div>
+        </div>
+  
     </div>
   </main>
+
+
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

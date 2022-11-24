@@ -7,6 +7,7 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
+
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
@@ -38,4 +39,34 @@ let getJSONData = function(url){
         hideSpinner();
         return result;
     });
+}
+
+
+let htmlContentToAppend = "";
+    
+const nombre = localStorage.getItem("usuario")
+
+document.addEventListener("DOMContentLoaded", function(e){
+if (!(nombre === null)) {
+
+
+  htmlContentToAppend += `
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  `+ nombre +`
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark ">
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a onclick ="salir()" class="dropdown-item text-danger" href="index.html">Salir</a></li>
+  </ul>
+    </div>
+    `
+    document.getElementById("nombreusu").innerHTML  = htmlContentToAppend; 
+}
+})
+
+function salir() {
+  localStorage.clear()
 }

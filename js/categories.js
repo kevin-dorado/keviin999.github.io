@@ -50,7 +50,7 @@ function showCategoriesList(){
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
 
             htmlContentToAppend += `
-            <div onclick="setCatID(${category.id})" class="list-group-item list-group-item-action cursor-active">
+            <div onclick="setCatID(${category.id})" class=" categorias list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <img src="${category.imgSrc}" alt="${category.description}" class="img-thumbnail">
@@ -80,7 +80,7 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
 
     currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
 
-    //Muestro las categorías ordenadas
+    //Muestro las categorías ordenadas++++
     showCategoriesList();
 }
 
@@ -141,3 +141,13 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+
+document.addEventListener("keyup", e =>{     
+    if (e.target.matches("#buscador")) {        
+        document.querySelectorAll(".categorias").forEach(articulo => {    
+        articulo.textContent.toLowerCase().includes(e.target.value)             
+        ?articulo.classList.remove("filtro")             
+        :articulo.classList.add("filtro")         
+        });     
+    } 
+})
