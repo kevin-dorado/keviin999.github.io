@@ -15,7 +15,7 @@ document.getElementById("validar").addEventListener("submit", function(a){
 function jwtDecode(res) {
     let user = decode(res.credential)
     localStorage.setItem("usuario", user.email)
-    window.location.href = "inicio.html"
+    window.location.href ="inicio.html"
 }
 function decode(token) {
     var base64Url = token.split('.')[1];
