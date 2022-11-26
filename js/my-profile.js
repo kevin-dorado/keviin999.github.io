@@ -43,27 +43,27 @@ formperfil.addEventListener("submit", function (a) {
 
   let telefono = document.getElementById("telefono").value
 
-  if (nombre1 !="" && apellido1!="") {
+  if (nombre1 != "" && apellido1 != "") {
     localStorage.setItem("nombre1", nombre1)
     localStorage.setItem("nombre2", nombre2)
     localStorage.setItem("apellido1", apellido1)
     localStorage.setItem("apellido2", apellido2)
     localStorage.setItem("telefono", telefono)
-    
-  // Subir foto al local storage
-  let fotoperfil = document.getElementById("fotoperfil")
-  const fr = new FileReader()
-  fr.readAsDataURL(fotoperfil.files[0])
-  fr.addEventListener("load", () => {
-    const url = fr.result
-    localStorage.setItem("fotoperfil", url)
-  })
+
+    // Subir foto al local storage
+    let fotoperfil = document.getElementById("fotoperfil")
+    const fr = new FileReader()
+    fr.readAsDataURL(fotoperfil.files[0])
+    fr.addEventListener("load", () => {
+      const url = fr.result
+      localStorage.setItem("fotoperfil", url)
+    })
 
   }
 
 
 
-  
+
 
 
 

@@ -3,19 +3,19 @@
 
 
 
-document.getElementById("validar").addEventListener("submit", function(a){
+document.getElementById("validar").addEventListener("submit", function (a) {
     a.preventDefault()
     const usu = document.getElementById("email").value
-    localStorage.setItem("usuario",usu)
-    window.location.href="inicio.html"
-    
+    localStorage.setItem("usuario", usu)
+    window.location.href = "inicio.html"
+
 })
 
 
 function jwtDecode(res) {
     let user = decode(res.credential)
     localStorage.setItem("usuario", user.email)
-    window.location.href ="inicio.html"
+    window.location.href = "inicio.html"
 }
 function decode(token) {
     var base64Url = token.split('.')[1];

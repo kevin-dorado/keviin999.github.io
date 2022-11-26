@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("catIDp") + ".json").then(function (resultObj) {
     if (resultObj.status === "ok") {
       comentario = resultObj.data
-      console.log(comentario)
       showComments()
 
     }
@@ -183,7 +182,6 @@ function carrito() {
 
     } else {
       found.cantidad += newpcart.cantidad
-      console.log("entrooo")
     }
     localStorage.setItem("prodcarrito", JSON.stringify(licarrito))
   } else {
@@ -191,7 +189,7 @@ function carrito() {
     licarrito.push(newpcart)
     localStorage.setItem("prodcarrito", JSON.stringify(licarrito))
   }
-  console.log(JSON.parse(localStorage.getItem("prodcarrito")))
+
 }
 
 function borrar(a) {
@@ -210,17 +208,17 @@ function escribircoment() {
   let redactado = document.getElementById("comentarioo").value
   let puntua = document.getElementById("inputGroupSelect01").value
   let usuario = localStorage.getItem("usuario")
-  let h =  new Date()
+  let h = new Date()
   let dia = (h.getDate())
-  let mes =(h.getMonth() +1)
-  let año =(h.getFullYear())
-  let hora=(h.getHours())
+  let mes = (h.getMonth() + 1)
+  let año = (h.getFullYear())
+  let hora = (h.getHours())
   let minutos = (h.getMinutes())
-  let segundos =(h.getSeconds())
-  console.log("DIA ES"+dia + "/"+ mes+"/"+año)
+  let segundos = (h.getSeconds())
 
-  console.log( puntua)
-  if (redactado != "" && puntua != "Seleccione"  ) { 
+
+
+  if (redactado != "" && puntua != "Seleccione") {
     let mostrar = ""
     mostrar += `  <div class="media mt-2 " style="padding-top 20px;">
     <div class="media-body border-top border-2 border-dark" style="background-color:#f1f1f1;">
@@ -230,8 +228,8 @@ function escribircoment() {
         </p>
     </div>
     </div>`
-    
-  document.getElementById("coments").innerHTML += mostrar;
-  } 
+
+    document.getElementById("coments").innerHTML += mostrar;
+  }
 
 }
